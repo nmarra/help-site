@@ -5,7 +5,17 @@ import { ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  images = [
+    {src: "assets/help1_Lwide.jpg"},
+    {src: "assets/help2_Lwide.jpg"},
+    {src: "assets/help3_Lwide.jpg"},
+    {src: "assets/help4_Lwide.jpg"},
+    {src: "assets/help5_Lwide.jpg"},
+    {src: "assets/help6_Lwide.jpg"},
+    {src: "assets/help8_Lwide.jpg"},
+    {src: "assets/help9_Lwide.jpg"},
+  ]
 }
