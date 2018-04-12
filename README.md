@@ -16,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Build for github
 
-`ng build --prod --out-path docs --base-href help-site`
+`ng build --prod --output-path docs --base-href help-site`
 
 ## Running unit tests
 
