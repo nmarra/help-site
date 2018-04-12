@@ -32,17 +32,18 @@ mat-sidenav {
   padding: 8px 0px;
 }
 
-.app-body {
-  flex: 1;
+.app-top-nav-row {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.mat-sidenav {
-  padding-top: 80px;
+.app-top-nav-title {
+  display: flex;
 }
 
+.fill-space{
+  flex: 1 auto;
+}
 .app-content {
-  display: inline-flex;
-  flex-grow: 1;
   text-align: center;
-  padding-left: 200px; /* width of side-nav */
 }

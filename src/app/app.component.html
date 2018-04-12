@@ -2,40 +2,27 @@
 <div class="app">
   <div class="app-header mat-elevation-z6">
     <mat-toolbar color="primary" class="mat-typography" class="app-top-nav">
-      <mat-toolbar-row>
-        <h1>HELP Center of Austin</h1>
+      <mat-toolbar-row class="app-top-nav-row">
+        <span>HELP Center of Austin</span>
+        <span class="fill-space"></span>
+        <button mat-button>Visit</button>
+        <button mat-button>Volunteer</button>
+        <button mat-button>Donate</button>
+        <button mat-button>Meet The Herd</button>
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
 
-  <div class="app-body">
-    <mat-sidenav-container class="mat-typography">
-      <mat-sidenav disableClose opened [fixedInViewport]="true">
-        <mat-nav-list>
-          <mat-list-item>
-            <span>Visit</span>
-          </mat-list-item>
-          <mat-list-item>
-            <span>Volunteer</span>
-          </mat-list-item>
-          <mat-list-item>
-            <span>Donate</span>
-          </mat-list-item>
-          <mat-list-item>
-            <span>Meet The Herd</span>
-          </mat-list-item>
-        </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content class="app-content">
-          <h1 style="font-weight: 700;">
-            Welcome to HELP!
-          </h1>
-          <img height="80%" width="80%" src="assets/farm.jpg">
-          <img height="80%" width="80%" src="assets/farm.jpg">
-          <img height="80%" width="80%" src="assets/farm.jpg">
-          <img height="80%" width="80%" src="assets/farm.jpg">
-          <img height="80%" width="80%" src="assets/farm.jpg">
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+
+  <div class="app-content">
+      <mat-toolbar class="app-toolbar" color="accent">
+          <span class="fill-space"></span>
+          <span>Horse Empowered Learning Programs</span>
+      </mat-toolbar>
+      <img height="100%" width="100%" src="assets/farm.jpg"><br/>
+      <img height="80%" width="80%" src="assets/farm.jpg"><br/>
+      <img height="80%" width="80%" src="assets/farm.jpg"><br/>
+      <img height="80%" width="80%" src="assets/farm.jpg"><br/>
+      <img height="80%" width="80%" src="assets/farm.jpg"><br/>
   </div>
 </div>
