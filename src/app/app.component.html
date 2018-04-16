@@ -1,19 +1,28 @@
 <div class="app">
   <div class="app-header">
     <mat-toolbar color="primary">
-      <mat-toolbar-row class="app-top-nav-row">
-        <h2>HELP Center of Austin</h2>
         <span class="fill-space"></span>
-        <button mat-button>Visit</button>
-        <button mat-button>Volunteer</button>
-        <button mat-button>Donate</button>
-        <button mat-button>Meet The Herd</button>
-      </mat-toolbar-row>
+        <button mat-button disableRipple>Visit</button>
+        <button mat-button disableRipple>Volunteer</button>
+        <button mat-button disableRipple>Donate</button>
+        <button mat-button disableRipple>Meet The Herd</button>
     </mat-toolbar>
   </div>
 
 
   <div class="app-content">
+    <mat-toolbar class="page-header">
+      <span class="logo">
+        <img src="{{logo}}">
+      </span>
+      <mat-toolbar-row class="row-1">
+        <span class="help-title">HELP Center of Austin</span>
+      </mat-toolbar-row>
+      <mat-toolbar-row class="row-2">
+        <span class="help-sub-title">Horse Empowered Learning Programs</span>
+      </mat-toolbar-row>
+
+    </mat-toolbar>
     <ng-container *ngFor="let image of images;">
         <img height="100%" width="100%" src="{{image.src}}">
     </ng-container>

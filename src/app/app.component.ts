@@ -8,6 +8,7 @@ import { ViewEncapsulation } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  logo = "assets/logo.jpg";
   images = [
     {src: "assets/help1_Lwide.jpg"},
     {src: "assets/help2_Lwide.jpg"},

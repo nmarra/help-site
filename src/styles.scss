@@ -1,8 +1,206 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
 @import '~@angular/material/theming';
-$app-primary: mat-palette($mat-indigo);
-$app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$mistee: (
+  50 : #f4f5f6,
+  100 : #e3e7e9,
+  200 : #d0d7db,
+  300 : #bdc6cd,
+  400 : #afbac2,
+  500 : #a1aeb7,
+  600 : #99a7b0,
+  700 : #8f9da7,
+  800 : #85949f,
+  900 : #748490,
+  A100 : #ffffff,
+  A200 : #e0f1fe,
+  A400 : #acdbff,
+  A700 : #92d0ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$jake: (
+  50 : #e9e8e9,
+  100 : #c9c6c9,
+  200 : #a5a0a5,
+  300 : #807a80,
+  400 : #655e65,
+  500 : #4a414a,
+  600 : #433b43,
+  700 : #3a323a,
+  800 : #322a32,
+  900 : #221c22,
+  A100 : #fa71fa,
+  A200 : #f93ff9,
+  A400 : #ff06ff,
+  A700 : #eb00eb,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$coco: (
+  50 : #e7e5e5,
+  100 : #c2bfbe,
+  200 : #999593,
+  300 : #706a67,
+  400 : #524a47,
+  500 : #332a26,
+  600 : #2e2522,
+  700 : #271f1c,
+  800 : #201917,
+  900 : #140f0d,
+  A100 : #ff7a59,
+  A200 : #ff5226,
+  A400 : #f23000,
+  A700 : #d92b00,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$rooster: (
+  50 : #f0e4e2,
+  100 : #d9bbb6,
+  200 : #bf8e85,
+  300 : #a56054,
+  400 : #923e30,
+  500 : #7f1c0b,
+  600 : #77190a,
+  700 : #6c1408,
+  800 : #621106,
+  900 : #4f0903,
+  A100 : #ff8882,
+  A200 : #ff574f,
+  A400 : #ff271c,
+  A700 : #ff0f03,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$regal: (
+  50 : #e3e7eb,
+  100 : #b9c3cc,
+  200 : #8a9baa,
+  300 : #5b7288,
+  400 : #37546f,
+  500 : #143655,
+  600 : #12304e,
+  700 : #0e2944,
+  800 : #0b223b,
+  900 : #06162a,
+  A100 : #659eff,
+  A200 : #327dff,
+  A400 : #005dfe,
+  A700 : #0054e5,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$piphy: (
+  50 : #edf3ed,
+  100 : #d3e0d1,
+  200 : #b6ccb2,
+  300 : #99b893,
+  400 : #83a87c,
+  500 : #6d9965,
+  600 : #65915d,
+  700 : #5a8653,
+  800 : #507c49,
+  900 : #3e6b37,
+  A100 : #c4ffbc,
+  A200 : #97ff89,
+  A400 : #6aff56,
+  A700 : #53ff3c,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$app-primary: mat-palette($jake);
+$app-accent:  mat-palette($mistee);
 
 // The warn palette is optional (defaults to red).
 $app-warn:    mat-palette($mat-red);
@@ -11,6 +209,12 @@ $app-warn:    mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 @include angular-material-theme($app-theme);
+
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
+$font-color: mat-color($app-accent);
 
 body, .mat-toolbar {
   font-family: 'Open Sans', sans-serif;
