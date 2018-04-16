@@ -21,11 +21,15 @@
       <mat-toolbar-row class="row-2">
         <span class="help-sub-title">Horse Empowered Learning Programs</span>
       </mat-toolbar-row>
-
     </mat-toolbar>
-    <ng-container *ngFor="let image of images;">
-        <img height="100%" width="100%" src="{{image.src}}">
-    </ng-container>
+
+    <ngx-carousel [inputs]="imageCarousel" class="carousel">
+      <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileItems;">
+          <img class="tile" src="{{tile}}">
+      </ngx-tile>
+      <button NgxCarouselPrev class="leftRs">&lt;</button>
+      <button NgxCarouselNext class="rightRs">&gt;</button>
+    </ngx-carousel>
 
     <h2>What is HELP?</h2>
       <p>HELP is a non-profit Therapeutic Riding Center for people with disabilities. We teach horsemanship and horseback riding skills to improve life skills.

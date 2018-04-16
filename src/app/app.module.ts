@@ -5,6 +5,8 @@ import { MatSidenavModule, MatToolbarModule, MatIconModule,
   MatButtonModule, MatMenuModule, MatListModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import {NgxCarouselModule} from 'ngx-carousel';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, NgxCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
