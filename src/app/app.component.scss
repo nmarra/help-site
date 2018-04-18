@@ -2,6 +2,7 @@
 @import '../styles';
 
 $header-size: 64px;
+$help-header-size: 80px;
 
 .app {
   position: absolute;
@@ -15,7 +16,7 @@ $header-size: 64px;
     top: 0;
     left: 0;
     right: 0;
-    mat-toolbar {
+    .navbar {
       @include mat-elevation(6);
 
       color: $font-color;
@@ -28,13 +29,9 @@ $header-size: 64px;
         }
       }
     }
-  }
-
-  .fill-space{
-    flex: 1 auto;
-  }
-  .app-content {
-    text-align: center;
+    .fill-space{
+      flex: 1 auto;
+    }
     .page-header {
       display: grid;
       grid-template-columns: 6em 1em 6em;
@@ -66,41 +63,7 @@ $header-size: 64px;
       }
     }
   }
-}
-
-.carousel {
-  z-index: -9;
-  .leftRs {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    height: 50px;
-    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
-    border-radius: 999px;
-    left: 0;
+  .app-content {
+    padding-top: $help-header-size;
   }
-
-  .rightRs {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    height: 50px;
-    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
-    border-radius: 999px;
-    right: 0;
-  }
-
-  .ngxcarousel-items > .item {
-    padding: 0;
-  }
-  .tile {
-    max-width:100%;
-    max-height:100%;
-    box-shadow: none;
-  }
-
 }
