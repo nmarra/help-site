@@ -1,38 +1,54 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NgxCarousel} from 'ngx-carousel';
+import {AfterViewInit, Component, ContentChildren, ElementRef, Input, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {group, animate, query, transition, style, trigger} from '@angular/animations';
+import {CarouselItemComponent} from './carousel-item.component';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss']
+  styleUrls: ['./carousel.component.scss'],
+  // animations: [
+  //   trigger('carouselAnimation', [
+  //     transition(":increment", group([
+  //       query(':enter', [
+  //         animate('0.5s ease-in', style({ opacity: '1' }),)
+  //       ]),
+  //       query(':leave', [
+  //         animate('0.5s ease-out', style({ opacity: '0' }))
+  //       ])
+  //     ])),
+  //     // transition(":decrement", group([
+  //     //   query(':enter', [
+  //     //     style({ opacity: '0' }),
+  //     //     animate('0.5s ease-out', style('*'))
+  //     //   ]),
+  //     //   query(':leave', [
+  //     //     animate('0.5s ease-out', style({ opacity: '1' }))
+  //     //   ])
+  //     // ]))
+  //   ])
+  // ]
 })
-export class CarouselComponent implements OnInit {
-
-  public imageCarousel: NgxCarousel;
-  public carouselTileItems: Array<any> = [];
+export class CarouselComponent implements AfterViewInit {
+  @ViewChildren(CarouselItemComponent) cis: QueryList<CarouselItemComponent>;
   @Input() images: any[];
 
-  ngOnInit() {
-    this.imageCarousel = {
-      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
-      slide: 1,
-      speed: 400,
-      interval: 4000,
-      point: {
-        visible: true
-      },
-      load: 2,
-      touch: true,
-      loop: true,
-      custom: 'banner'
-    };
-    this.carouselLoad();
+  currentIndex: number = 0;
+
+  ngAfterViewInit() {
+    this.cis.toArray()[this.currentIndex].getElementRef().nativeElement.style.display = 'inherit';
   }
 
-  public carouselLoad() {
-    for (let i = 0; i < this.images.length; i++) {
-      this.carouselTileItems.push(this.images[i]);
-    }
+  prev() {
+    this.setCurrentImage(this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex -1);
   }
 
+  next() {
+    this.setCurrentImage(this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex +1);
+  }
+
+  setCurrentImage(i: number) {
+    this.cis.toArray()[this.currentIndex].getElementRef().nativeElement.style.display = 'none';
+    this.currentIndex = i;
+    this.cis.toArray()[this.currentIndex].getElementRef().nativeElement.style.display = 'inherit';
+  }
 }

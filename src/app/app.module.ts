@@ -5,7 +5,6 @@ import { MatSidenavModule, MatToolbarModule, MatIconModule,
   MatButtonModule, MatMenuModule, MatListModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import {NgxCarouselModule} from 'ngx-carousel';
 import 'hammerjs';
 import { VisitComponent } from './visit/visit.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +15,7 @@ import { MeetTheHerdComponent } from './meet-the-herd/meet-the-herd.component';
 import { MeetTheStaffComponent } from './meet-the-staff/meet-the-staff.component';
 import { BioComponent } from './shared/bio/bio.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
+import {CarouselItemComponent} from './shared/carousel/carousel-item.component';
 
 const appRoutes: Routes = [
   { path: 'visit', component: VisitComponent },
@@ -36,13 +36,14 @@ const appRoutes: Routes = [
     MeetTheHerdComponent,
     MeetTheStaffComponent,
     BioComponent,
-    CarouselComponent
+    CarouselComponent,
+    CarouselItemComponent
   ],
   imports: [
     RouterModule.forRoot( appRoutes ),
     BrowserModule,
     MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule,
-    BrowserAnimationsModule, NgxCarouselModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
