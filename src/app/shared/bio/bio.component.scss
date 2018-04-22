@@ -1,0 +1,16 @@
+@import '../../../styles';
+
+.bio-parent {
+  display: flex;
+  margin-left: $page-margin;
+  margin-right: $page-margin;
+  margin-bottom: 40px;
+  .bio-image{
+    margin-right: 20px;
+  }
+  .bio {
+    .name {
+      margin-top: 0px;
+    }
+  }
+}

@@ -13,12 +13,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { DonateComponent } from './donate/donate.component';
 import { MeetTheHerdComponent } from './meet-the-herd/meet-the-herd.component';
+import { MeetTheStaffComponent } from './meet-the-staff/meet-the-staff.component';
+import { BioComponent } from './shared/bio/bio.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 const appRoutes: Routes = [
   { path: 'visit', component: VisitComponent },
   { path: 'volunteer', component: VolunteerComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'meetTheHerd', component: MeetTheHerdComponent },
+  { path: 'meetTheStaff', component: MeetTheStaffComponent },
   { path: '',      component: HomeComponent },
 ];
 
@@ -29,7 +33,10 @@ const appRoutes: Routes = [
     HomeComponent,
     VolunteerComponent,
     DonateComponent,
-    MeetTheHerdComponent
+    MeetTheHerdComponent,
+    MeetTheStaffComponent,
+    BioComponent,
+    CarouselComponent
   ],
   imports: [
     RouterModule.forRoot( appRoutes ),

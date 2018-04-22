@@ -67,3 +67,7 @@ $help-header-size: 80px;
     padding-top: $help-header-size;
   }
 }
+.page-body {
+  margin-left: $page-margin;
+  margin-right: $page-margin;
+}

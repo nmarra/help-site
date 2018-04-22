@@ -12,4 +12,11 @@ export class VolunteerComponent implements OnInit {
   ngOnInit() {
   }
 
+  volunteerImages = [
+    "assets/volunteer/volunteers1.jpg",
+    "assets/volunteer/volunteers2.jpg" ,
+    "assets/volunteer/volunteers3.jpg",
+    "assets/volunteer/volunteers4.jpg"
+  ];
+
 }
