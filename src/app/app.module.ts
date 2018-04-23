@@ -16,6 +16,7 @@ import { MeetTheStaffComponent } from './meet-the-staff/meet-the-staff.component
 import { BioComponent } from './shared/bio/bio.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import {CarouselItemComponent} from './shared/carousel/carousel-item.component';
+import { SocialBarComponent } from './shared/social-bar/social-bar.component';
 
 const appRoutes: Routes = [
   { path: 'visit', component: VisitComponent },
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     MeetTheStaffComponent,
     BioComponent,
     CarouselComponent,
-    CarouselItemComponent
+    CarouselItemComponent,
+    SocialBarComponent
   ],
   imports: [
     RouterModule.forRoot( appRoutes ),
