@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'carousel-item',
@@ -7,9 +7,13 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 })
 export class CarouselItemComponent {
   @Input() img: string;
-  @ViewChild('myDiv') div: ElementRef;
+  isVisible: boolean;
 
-  getElementRef(): ElementRef {
-    return this.div;
+  constructor(private cd: ChangeDetectorRef) {
+
+  }
+  setVisibility(vis: boolean) {
+    this.isVisible = vis;
+    this.cd.detectChanges();
   }
 }

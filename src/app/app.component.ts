@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-import {NgxCarousel} from 'ngx-carousel';
 
 @Component({
   encapsulation: ViewEncapsulation.None,

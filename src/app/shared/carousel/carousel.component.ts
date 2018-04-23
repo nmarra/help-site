@@ -1,41 +1,32 @@
-import {AfterViewInit, Component, ContentChildren, ElementRef, Input, OnInit, QueryList, ViewChildren} from '@angular/core';
-import {group, animate, query, transition, style, trigger} from '@angular/animations';
+import {AfterViewInit, Component, Input, OnDestroy, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {CarouselItemComponent} from './carousel-item.component';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  // animations: [
-  //   trigger('carouselAnimation', [
-  //     transition(":increment", group([
-  //       query(':enter', [
-  //         animate('0.5s ease-in', style({ opacity: '1' }),)
-  //       ]),
-  //       query(':leave', [
-  //         animate('0.5s ease-out', style({ opacity: '0' }))
-  //       ])
-  //     ])),
-  //     // transition(":decrement", group([
-  //     //   query(':enter', [
-  //     //     style({ opacity: '0' }),
-  //     //     animate('0.5s ease-out', style('*'))
-  //     //   ]),
-  //     //   query(':leave', [
-  //     //     animate('0.5s ease-out', style({ opacity: '1' }))
-  //     //   ])
-  //     // ]))
-  //   ])
-  // ]
 })
-export class CarouselComponent implements AfterViewInit {
+export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChildren(CarouselItemComponent) cis: QueryList<CarouselItemComponent>;
   @Input() images: any[];
+  @Input() interval: number = 3000;
 
   currentIndex: number = 0;
+  private intervalId;
 
+  ngOnInit() {
+    this.intervalId = setInterval(() => {
+      this.next();
+    }, this.interval);
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
   ngAfterViewInit() {
-    this.cis.toArray()[this.currentIndex].getElementRef().nativeElement.style.display = 'inherit';
+    this.cis.toArray()[this.currentIndex].setVisibility(true);
   }
 
   prev() {
@@ -47,8 +38,8 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   setCurrentImage(i: number) {
-    this.cis.toArray()[this.currentIndex].getElementRef().nativeElement.style.display = 'none';
+    this.cis.toArray()[this.currentIndex].setVisibility(false);
     this.currentIndex = i;
-    this.cis.toArray()[this.currentIndex].getElementRef().nativeElement.style.display = 'inherit';
+    this.cis.toArray()[this.currentIndex].setVisibility(true);
   }
 }
