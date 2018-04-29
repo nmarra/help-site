@@ -1,15 +1,10 @@
 <div class="slideshow-container" [@slide]="currentIndex">
-  <div class="slide" *ngFor="let image of images" >
-    <img [src]="image">
+    <div class="slide" *ngFor="let image of images" >
+      <img [src]="image">
+    </div>
+  <div class="slide-bar">
+      <span class="dot" *ngFor="let img of _images; let i = index;"
+            (click)="setCurrentImage(i)"
+            [ngClass]="{ 'active' : i === currentIndex }"></span>
   </div>
-</div>
-<br>
-<button class="prev" (click)="prev()">&#10094;</button>
-<button class="next" (click)="next()">&#10095;</button>
-
-
-<div style="text-align:center">
-  <span class="dot" *ngFor="let img of _images; let i = index;"
-        (click)="setCurrentImage(i)"
-        [ngClass]="{ 'active' : i === currentIndex }"></span>
 </div>
