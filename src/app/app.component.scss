@@ -17,6 +17,8 @@ $help-header-size: 80px;
     left: 0;
     right: 0;
     .navbar {
+      height: $header-size;
+
       @include mat-elevation(6);
 
       color: $font-color;
@@ -28,9 +30,26 @@ $help-header-size: 80px;
           border-bottom: 1px solid $accent;
         }
       }
+      @media all and (max-width: 600px) {
+        display: flex;
+        flex-wrap: wrap;
+        .mat-button{
+          min-width: 0px;
+          height: $header-size / 2 ;
+          flex: 1 auto;
+        }
+      }
+      @media all and ( max-width: 360px) {
+        .mat-button {
+          padding: 0 2px;
+        }
+      }
     }
     .fill-space{
       flex: 1 auto;
+      @media all and (max-width: 600px) {
+        display:none;
+      }
     }
     .page-header {
       display: grid;
