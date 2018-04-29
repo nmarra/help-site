@@ -1,1 +1,6 @@
-
+.volunteer-carousel {
+  ::ng-deep .slideshow-container {
+    max-height:1920px;
+    max-width: 1080px;
+  }
+}
