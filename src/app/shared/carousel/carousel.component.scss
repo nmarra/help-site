@@ -1,9 +1,18 @@
 @import '../../../styles';
 
 .slideshow-container {
-  position: relative;
-  margin: auto;
+  position:relative;
+  height: 600px;
+  width: 100%;
+  overflow:hidden;
+}
+.slide {
+   position: absolute;
   z-index: -9;
+ }
+.slide > img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Next & previous buttons */
