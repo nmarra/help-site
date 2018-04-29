@@ -1,4 +1,4 @@
-<div class="slideshow-container" [@slide]="currentIndex">
+<div class="slideshow-container" [ngClass]="{ 'portrait' : isPortrait }">
     <div class="slide" *ngFor="let image of images" >
       <img [src]="image">
     </div>

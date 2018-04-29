@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { MatSidenavModule, MatToolbarModule, MatIconModule,
   MatButtonModule, MatMenuModule, MatListModule } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { VisitComponent } from './visit/visit.component';
@@ -42,8 +41,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot( appRoutes ),
     BrowserModule,
-    MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule,
-    BrowserAnimationsModule
+    MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -8,6 +8,7 @@ import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core'
 export class CarouselComponent implements OnInit, OnDestroy {
   @Input() _images: any[];
   @Input() interval: number = 3000;
+  @Input() isPortrait: boolean = false;
 
   currentIndex: number = 0;
   private intervalId;
@@ -25,7 +26,6 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   get images() {
-    console.log(this.currentIndex, [this._images[this.currentIndex]]);
     return [this._images[this.currentIndex]];
   }
 
