@@ -2,6 +2,7 @@
 @import '../styles';
 
 $header-size: 64px;
+$button-size: 60px;
 $help-header-size: 80px;
 
 .app {
@@ -23,24 +24,36 @@ $help-header-size: 80px;
 
       color: $font-color;
 
-      .mat-button {
+      button {
         font-size: 14px;
-        height: $header-size;
-        .mat-button-focus-overlay {
-          border-bottom: 1px solid $accent;
+        height: $button-size;
+        background: transparent;
+        border: none;
+        color: $font-color;
+        padding: 0 16px;
+        &:hover{
+          background-color: #a1aeb729;
+          color: mat-color($app-accent, 200);
+          border-bottom: 1px solid mat-color($app-accent, 200);
+        }
+
+        &:focus{
+          outline: none;
+          color: white;
+          border-bottom: 1px solid mat-color($app-accent, 200);
         }
       }
       @media all and (max-width: 600px) {
         display: flex;
         flex-wrap: wrap;
-        .mat-button{
+        button {
           min-width: 0px;
-          height: $header-size / 2 ;
+          height: $button-size / 2 ;
           flex: 1 auto;
         }
       }
       @media all and ( max-width: 360px) {
-        .mat-button {
+        button {
           padding: 0 2px;
         }
       }
